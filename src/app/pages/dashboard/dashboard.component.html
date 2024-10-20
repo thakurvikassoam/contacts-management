@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Contacts Management</h1>
+  
+  <app-contact-form
+    [selectedContact]="selectedContact"
+    (contactAdded)="onContactAdded($event)"
+    (contactUpdated)="onContactUpdated($event)"
+    (contactDeleted)="onContactDeleted($event)">
+  </app-contact-form>
+
+  <!-- Contact List -->
+  <div class="contact-list">
+    <h2>Contact List</h2>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let contact of contacts">
+        {{ contact.firstName }} {{ contact.lastName }} - {{ contact.email }}
+        <button (click)="onContactSelected(contact)">Edit</button>
+      </li>
+    </ul>
+  </div>
+</div>

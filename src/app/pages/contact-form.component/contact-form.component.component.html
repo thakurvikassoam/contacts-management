@@ -1,0 +1,7 @@
+<div class="contact-form">
+    <input type="text" [(ngModel)]="firstName" placeholder="First Name" />
+    <input type="text" [(ngModel)]="lastName" placeholder="Last Name" />
+    <input type="email" [(ngModel)]="email" placeholder="Email" />
+    <button (click)="onSubmit()">{{ selectedContact ? 'Update' : 'Add' }} Contact</button>
+    <button *ngIf="selectedContact" (click)="onDelete()">Delete Contact</button>
+  </div>
